@@ -4,11 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4efdda6b-2a2f-49a2-a49f-59a645e6850c" name="Changes" comment="" />
+    <list default="true" id="4efdda6b-2a2f-49a2-a49f-59a645e6850c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/boardgame/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/boardgame/Piece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/boardgame/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chesslayer/ChessPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Partida/ChessMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chesslayer/ChessMatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/ChessPiece.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/Color.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/Bishop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/King.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/Knight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/Pawn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/Queen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/Rook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/Piece.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/Positions/ChessPosition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/Positions/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tabuleiro/Board.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -18,22 +46,23 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2ximy2ixT3GfqVxREDfoKvqDuup" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
