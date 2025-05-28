@@ -5,26 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4efdda6b-2a2f-49a2-a49f-59a645e6850c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/boardgame/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/boardgame/Piece.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/boardgame/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/chesslayer/ChessPiece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chesslayer/pieces/Bishop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chesslayer/pieces/King.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chesslayer/pieces/Knight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chesslayer/pieces/Pawn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chesslayer/pieces/Queen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chesslayer/pieces/Rook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/chess/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/chess/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Partida/ChessMatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/ChessPiece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/Color.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/Especific/Bishop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/Especific/King.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/Especific/Knight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/Especific/Pawn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/Especific/Queen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/Especific/Rook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/Positions/ChessPosition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Pieces/Positions/Position.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/chess/Tabuleiro/Board.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Partida/ChessMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chesslayer/ChessMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/ChessPiece.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Color.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/Bishop.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/King.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/Knight.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/Pawn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/Queen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Especific/Rook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Piece.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Positions/ChessPosition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/Positions/Position.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tabuleiro/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/boardgame/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/boardgame/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/boardgame/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/boardgame/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chesslayer/ChessMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chesslayer/ChessMatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chesslayer/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chesslayer/ChessPiece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +57,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2ximy2ixT3GfqVxREDfoKvqDuup" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -63,6 +73,20 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="chess" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
