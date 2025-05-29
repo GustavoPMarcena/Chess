@@ -4,7 +4,7 @@ import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
 
-import java.awt.*;
+import chesslayer.Color;
 
 public abstract class ChessPiece extends Piece {
     private Color color;

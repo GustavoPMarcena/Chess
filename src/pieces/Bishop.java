@@ -4,7 +4,7 @@ import boardgame.Board;
 import boardgame.Position;
 import chesslayer.ChessPiece;
 
-import java.awt.*;
+import chesslayer.Color;
 
 public class Bishop extends ChessPiece {
 

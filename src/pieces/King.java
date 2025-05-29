@@ -3,8 +3,9 @@ package pieces;
 import boardgame.Board;
 import boardgame.Position;
 import chesslayer.ChessPiece;
+import chesslayer.Color;
 
-import java.awt.*;
+import chesslayer.Color;
 
 public class King extends ChessPiece {
 
@@ -14,7 +15,13 @@ public class King extends ChessPiece {
 
     @Override
     public boolean[][] possibleMoves() {
-        return null;
+        boolean[][] matriz = new boolean[getBoard().getRows()][getBoard().getColumns()];
+
+        Position p = new Position(getPosition().getRow() - 1, getPosition().getColumn());
+
+
+        return matriz;
+
     }
 
     @Override
