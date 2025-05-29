@@ -1,6 +1,8 @@
 package boardgame;
 
-public class Board {
+import chesslayer.ChessException;
+
+public class Board  {
     private final int rows;
     private final int columns;
     private Piece[][] pieces;
@@ -24,14 +26,17 @@ public class Board {
     }
 
     public Piece piece (Position position) {
+        validatePosition(position);
         return pieces[position.getRow()][position.getColumn()];
     }
 
     public void placePiece(Piece piece, Position position) {
+        validatePosition(position);
         pieces[position.getRow()][position.getColumn()] = piece;
     }
 
     public Piece removePiece(Position position) {
+        validatePosition(position);
         Piece removedPiece = pieces[position.getRow()][position.getColumn()];
         pieces[position.getRow()][position.getColumn()] = null;
         return removedPiece;
@@ -46,8 +51,17 @@ public class Board {
     }
 
     public boolean thereIsAPiece(Position position) {
+        validatePosition(position);
         return piece(position) != null;
     }
+
+    public void validatePosition(Position position) {
+        if(!positionExists(position)) {
+            throw new ChessException("Posição não existe!");
+        }
+    }
+
+
 
 
 }

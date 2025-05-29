@@ -6,7 +6,7 @@ import boardgame.Position;
 
 import java.awt.*;
 
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
     private Color color;
 
     public ChessPiece(Board board, Color color ) {
@@ -18,13 +18,10 @@ public class ChessPiece extends Piece {
         return color;
     }
 
-    @Override
-    public boolean[][] possibleMoves() {
-        return new boolean[0][];
+    protected boolean isThereOpponentPiece(Position position) {
+        ChessPiece piece = (ChessPiece)getBoard().piece(position);
+        return piece != null && piece.getColor() != color;
     }
 
-    @Override
-    public boolean possibleMove(Position position) {
-        return false;
-    }
+
 }

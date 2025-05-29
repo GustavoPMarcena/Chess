@@ -18,11 +18,6 @@ public class Bishop extends ChessPiece {
     }
 
     @Override
-    public boolean possibleMove(Position position) {
-        return false;
-    }
-
-    @Override
     public String toString() {
         return "B";
     }
