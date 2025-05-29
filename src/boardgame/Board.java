@@ -58,7 +58,7 @@ public class Board  {
 
     public void validatePosition(Position position) {
         if(!positionExists(position)) {
-            throw new ChessException("Posição não existe!");
+            throw new BoardException("Posição não existe!");
         }
     }
 

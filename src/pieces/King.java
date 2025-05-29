@@ -19,9 +19,31 @@ public class King extends ChessPiece {
 
         Position p = new Position(getPosition().getRow() - 1, getPosition().getColumn());
 
+        p.setValues(position.getRow() + 1, position.getColumn());
+        validateInternalMove(p, matriz);
+        p.setValues(position.getRow() - 1 , position.getColumn());
+        validateInternalMove(p, matriz);
+        p.setValues(position.getRow(), position.getColumn() + 1);
+        validateInternalMove(p, matriz);
+        p.setValues(position.getRow(), position.getColumn() - 1);
+        validateInternalMove(p, matriz);
+        p.setValues(position.getRow() + 1, position.getColumn() + 1);
+        validateInternalMove(p, matriz);
+        p.setValues(position.getRow() - 1, position.getColumn() - 1);
+        validateInternalMove(p, matriz);
+        p.setValues(position.getRow() + 1, position.getColumn() - 1);
+        validateInternalMove(p, matriz);
+        p.setValues(position.getRow() - 1, position.getColumn() + 1);
+        validateInternalMove(p, matriz);
 
         return matriz;
 
+    }
+
+    private void validateInternalMove(Position p, boolean[][] matriz) {
+        if (getBoard().positionExists(p) && (isThereOpponentPiece(p) || !getBoard().thereIsAPiece(p))) {
+            matriz[p.getRow()][p.getColumn()] = true;
+        }
     }
 
     @Override
