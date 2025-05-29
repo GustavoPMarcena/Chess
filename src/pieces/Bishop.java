@@ -1,4 +1,4 @@
-package chesslayer.pieces;
+package pieces;
 
 import boardgame.Board;
 import boardgame.Position;
@@ -6,9 +6,9 @@ import chesslayer.ChessPiece;
 
 import java.awt.*;
 
-public class Knight extends ChessPiece {
+public class Bishop extends ChessPiece {
 
-    public Knight(Board board, Color color) {
+    public Bishop(Board board, Color color) {
         super(board, color);
     }
 
@@ -24,6 +24,6 @@ public class Knight extends ChessPiece {
 
     @Override
     public String toString() {
-        return "N";
+        return "B";
     }
 }

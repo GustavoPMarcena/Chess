@@ -1,4 +1,7 @@
 import chesslayer.ChessPiece;
+import chesslayer.ChessPosition;
+
+import java.util.Scanner;
 
 public class UI {
     public void imprimirTabuleiro(ChessPiece[][] matriz) {
@@ -20,5 +23,12 @@ public class UI {
             System.out.print("-");
         }
         System.out.print(" ");
+    }
+
+    public ChessPosition lerPosicao(Scanner sc) {
+        String s = sc.nextLine();
+        char column = s.charAt(0);
+        int row = Integer.parseInt(s.substring(1));
+        return new ChessPosition(column, row);
     }
 }

@@ -37,10 +37,16 @@ public class Board {
         return removedPiece;
     }
 
+    public boolean positionExists (int x, int y) {
+        return x >= 0 && x < rows && y >= 0 && y < columns;
+    }
+
     public boolean positionExists (Position position) {
-        return (position.getRow() > this.rows && position.getRow() < 0)
-                &&
-                (position.getColumn() > this.columns && position.getColumn() < 0);
+        return positionExists(position.getRow(), position.getColumn());
+    }
+
+    public boolean thereIsAPiece(Position position) {
+        return piece(position) != null;
     }
 
 

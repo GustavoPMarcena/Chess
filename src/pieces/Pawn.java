@@ -1,4 +1,4 @@
-package chesslayer.pieces;
+package pieces;
 
 import boardgame.Board;
 import boardgame.Position;
@@ -14,13 +14,18 @@ public class Pawn extends ChessPiece {
 
     @Override
     public boolean[][] possibleMoves() {
-        return null;
-
+        boolean[][] movimentos = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        for (int i = 0; i < getBoard().getRows(); i++) {
+            for (int j = 0; j < getBoard().getColumns(); j++) {
+                movimentos[i][j] = possibleMove(new Position(i, j));
+            }
+        }
+        return movimentos;
     }
 
     @Override
     public boolean possibleMove(Position position) {
-        return false;
+        return true;
     }
 
     @Override
