@@ -22,6 +22,7 @@ public class Main {
                 ChessPosition destino = ui.lerPosicao(sc);
 
                 ChessPiece capturada = partida.performMove(peca, destino);
+
                 ui.imprimirEspacamento();
             }
             catch (ChessException | InputMismatchException e) {
@@ -30,6 +31,7 @@ public class Main {
             }
 
         }
+        ui.imprimirTabuleiro(partida.getPieces());
         System.out.println(partida.getMensagemVitoria());
     }
 }

@@ -29,6 +29,11 @@ public class Pawn extends ChessPiece {
         p.setValues(position.getRow() + colorCalculation, position.getColumn() - 1);
         checkEnemyPosition(p, matriz);
 
+        System.out.println(getMovementNumber());
+        if(getMovementNumber() == 0) {
+            p.setValues(position.getRow() + colorCalculation + colorCalculation, position.getColumn());
+            validateInternalMove(p, matriz);
+        }
 
         return matriz;
     }

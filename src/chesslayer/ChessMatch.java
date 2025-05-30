@@ -25,8 +25,8 @@ public class ChessMatch {
     public ChessPiece[][] getPieces() {
         ChessPiece[][] novoVetor = new ChessPiece[board.getRows()][board.getColumns()];
 
-        for (int i = 0; i<board.getRows(); i++) {
-            for (int j = 0; j< board.getColumns(); j++) {
+        for (int i = 0; i < board.getRows(); i++) {
+            for (int j = 0; j < board.getColumns(); j++) {
                 novoVetor[i][j] = (ChessPiece) board.piece(i, j);
             }
         }
@@ -34,38 +34,47 @@ public class ChessMatch {
     }
 
     public void placeNewPiece(char column, int row, ChessPiece piece) {
-        board.placePiece(piece, new ChessPosition(column, row).toPosition()) ;
+        board.placePiece(piece, new ChessPosition(column, row).toPosition());
     }
 
     public ChessPiece performMove(ChessPosition positionOrigem, ChessPosition positionDestino) {
         Position origem = positionOrigem.toPosition();
         Position destino = positionDestino.toPosition();
-        validateOrigin (origem);
+        validateOrigin(origem);
         validadeDestiny(origem, destino);
         Piece pecaCapturada = makeMove(origem, destino);
+        ChessPiece pecaASerMovida = (ChessPiece) board.piece(origem);
         validateCheckmate(pecaCapturada);
+        if (((ChessPiece) pecaCapturada).getColor() == Color.WHITE) {
+            board.addPecasCapturadasBrancas(pecaCapturada);
+        } else {
+            board.addPecasCapturadasPretas(pecaCapturada);
+        }
+        if (pecaASerMovida != null) pecaASerMovida.setMovementNumber();
         changeTurn();
         return (ChessPiece) pecaCapturada;
     }
 
     public void validateOrigin(Position origem) {
         ChessPiece piece = (ChessPiece) board.piece(origem);
-        if(piece.getColor() != turn) {
+        if (piece.getColor() != turn) {
             throw new ChessException("Esta peça pertence ao turno do outros jogador!");
         }
         if (!board.thereIsAPiece(origem)) {
             throw new ChessException("Não Existem peças nessa posição!");
-        };
+        }
+        ;
     }
 
     public void validadeDestiny(Position source, Position destiny) {
         if (!board.piece(source).possibleMove(destiny)) {
             throw new ChessException("Esta peça não pode se mover para esta posição!");
-        };
+        }
+        ;
     }
 
-    public void changeTurn () {
-        if(turn == Color.WHITE) setTurn(Color.BLACK);
+    public void changeTurn() {
+        if (turn == Color.WHITE) setTurn(Color.BLACK);
         else setTurn(Color.WHITE);
     }
 
@@ -83,7 +92,7 @@ public class ChessMatch {
         placeNewPiece('b', 8, new Knight(board, Color.BLACK));
         placeNewPiece('c', 8, new Bishop(board, Color.BLACK));
         placeNewPiece('d', 8, new Queen(board, Color.BLACK));
-        placeNewPiece('c', 3, new King(board, Color.BLACK));
+        placeNewPiece('e', 8, new King(board, Color.BLACK));
         placeNewPiece('f', 8, new Bishop(board, Color.BLACK));
         placeNewPiece('g', 8, new Knight(board, Color.BLACK));
         placeNewPiece('h', 8, new Rook(board, Color.BLACK));
@@ -134,18 +143,15 @@ public class ChessMatch {
     }
 
     public void validateCheckmate(Piece piece) {
-        if(piece instanceof King) {
+        if (piece instanceof King) {
             checkmate = true;
             if (((ChessPiece) piece).getColor() == Color.WHITE) {
-                mensagemVitoria = "Vitória das Brancas";
-            } else {
                 mensagemVitoria = "Vitória das Pretas";
+            } else {
+                mensagemVitoria = "Vitória das Brancas";
             }
         }
     }
-
-
-
 
 
 }
