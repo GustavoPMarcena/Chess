@@ -2,10 +2,17 @@ package boardgame;
 
 import chesslayer.ChessException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Board  {
     private final int rows;
     private final int columns;
     private Piece[][] pieces;
+
+    private List<Piece> pecasBrancasCapturadas = new ArrayList<Piece>();
+    private List<Piece> pecasPretasCapturadas = new ArrayList<Piece>();
+    private List<Piece> pecasNoJogo = new ArrayList<Piece>();
 
     public Board(int rows, int columns) {
         this.rows = rows;
@@ -34,6 +41,7 @@ public class Board  {
         validatePosition(position);
         pieces[position.getRow()][position.getColumn()] = piece;
         piece.position = position;
+        addPecasNoJogo(piece);
     }
 
     public Piece removePiece(Position position) {
@@ -62,7 +70,28 @@ public class Board  {
         }
     }
 
+    public void addPecasCapturadasBrancas (Piece novaPeca) {
+        pecasBrancasCapturadas.add(novaPeca);
+    }
 
+    public void addPecasCapturadasPretas (Piece novaPeca) {
+        pecasPretasCapturadas.add(novaPeca);
+    }
 
+    public void addPecasNoJogo(Piece peca) {
+        pecasNoJogo.add(peca);
+    }
+
+    public void removePecasCapturadasBrancas (Piece novaPeca) {
+        pecasBrancasCapturadas.remove(novaPeca);
+    }
+
+    public void removePecasCapturadasPretas (Piece novaPeca) {
+        pecasPretasCapturadas.remove(novaPeca);
+    }
+
+    public void removePecasNoJogo(Piece peca) {
+        pecasNoJogo.remove(peca);
+    }
 
 }

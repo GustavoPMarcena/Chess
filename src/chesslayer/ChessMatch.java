@@ -5,13 +5,20 @@ import boardgame.Piece;
 import boardgame.Position;
 import pieces.*;
 
-import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class ChessMatch {
     private Board board;
+    private Color turn;
+    private boolean checkmate;
+    private String mensagemVitoria;
 
     public ChessMatch() {
         this.board = new Board(8, 8);
+        turn = Color.WHITE;
+        checkmate = false;
         initialSetup();
     }
 
@@ -36,10 +43,16 @@ public class ChessMatch {
         validateOrigin (origem);
         validadeDestiny(origem, destino);
         Piece pecaCapturada = makeMove(origem, destino);
+        validateCheckmate(pecaCapturada);
+        changeTurn();
         return (ChessPiece) pecaCapturada;
     }
 
     public void validateOrigin(Position origem) {
+        ChessPiece piece = (ChessPiece) board.piece(origem);
+        if(piece.getColor() != turn) {
+            throw new ChessException("Esta peça pertence ao turno do outros jogador!");
+        }
         if (!board.thereIsAPiece(origem)) {
             throw new ChessException("Não Existem peças nessa posição!");
         };
@@ -51,7 +64,10 @@ public class ChessMatch {
         };
     }
 
-
+    public void changeTurn () {
+        if(turn == Color.WHITE) setTurn(Color.BLACK);
+        else setTurn(Color.WHITE);
+    }
 
     public Piece makeMove(Position origem, Position destino) {
         Piece pecaASerMovida = board.removePiece(origem);
@@ -67,7 +83,7 @@ public class ChessMatch {
         placeNewPiece('b', 8, new Knight(board, Color.BLACK));
         placeNewPiece('c', 8, new Bishop(board, Color.BLACK));
         placeNewPiece('d', 8, new Queen(board, Color.BLACK));
-        placeNewPiece('e', 8, new King(board, Color.BLACK));
+        placeNewPiece('c', 3, new King(board, Color.BLACK));
         placeNewPiece('f', 8, new Bishop(board, Color.BLACK));
         placeNewPiece('g', 8, new Knight(board, Color.BLACK));
         placeNewPiece('h', 8, new Rook(board, Color.BLACK));
@@ -91,13 +107,45 @@ public class ChessMatch {
         placeNewPiece('g', 1, new Knight(board, Color.WHITE));
         placeNewPiece('h', 1, new Rook(board, Color.WHITE));
 
-       // placeNewPiece('a', 2, new Pawn(board, Color.WHITE));
+        placeNewPiece('a', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('b', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('c', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('d', 2, new Pawn(board, Color.WHITE));
-       // placeNewPiece('e', 2, new Pawn(board, Color.WHITE));
+        placeNewPiece('e', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('f', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('g', 2, new Pawn(board, Color.WHITE));
         placeNewPiece('h', 2, new Pawn(board, Color.WHITE));
     }
+
+    public Color getTurn() {
+        return turn;
+    }
+
+    public void setTurn(Color turn) {
+        this.turn = turn;
+    }
+
+    public boolean isCheckmate() {
+        return checkmate;
+    }
+
+    public String getMensagemVitoria() {
+        return mensagemVitoria;
+    }
+
+    public void validateCheckmate(Piece piece) {
+        if(piece instanceof King) {
+            checkmate = true;
+            if (((ChessPiece) piece).getColor() == Color.WHITE) {
+                mensagemVitoria = "Vitória das Brancas";
+            } else {
+                mensagemVitoria = "Vitória das Pretas";
+            }
+        }
+    }
+
+
+
+
+
 }

@@ -14,22 +14,39 @@ public class Pawn extends ChessPiece {
 
     @Override
     public boolean[][] possibleMoves() {
-        boolean[][] movimentos = new boolean[getBoard().getRows()][getBoard().getColumns()];
-        for (int i = 0; i < getBoard().getRows(); i++) {
-            for (int j = 0; j < getBoard().getColumns(); j++) {
-                movimentos[i][j] = possibleMove(new Position(i, j));
-            }
-        }
-        return movimentos;
+        boolean[][] matriz = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        Position p = new Position(0, 0);
+
+        // Nessa parte, verifico a cor da peça, para o movimento ser feito para cima, ou para baixo xd
+        int colorCalculation = (getColor() == Color.WHITE) ? -1 : 1;
+
+        // checar movimento para cima
+        p.setValues(position.getRow() + colorCalculation, position.getColumn());
+        validateInternalMove(p, matriz);
+        // checar ataques laterais
+        p.setValues(position.getRow() + colorCalculation, position.getColumn() + 1);
+        checkEnemyPosition(p, matriz);
+        p.setValues(position.getRow() + colorCalculation, position.getColumn() - 1);
+        checkEnemyPosition(p, matriz);
+
+
+        return matriz;
     }
 
-    @Override
-    public boolean possibleMove(Position position) {
-        return true;
+    private void validateInternalMove(Position p, boolean[][] matriz) {
+        if ((getBoard().positionExists(p) && !getBoard().thereIsAPiece(p))) {
+            matriz[p.getRow()][p.getColumn()] = true;
+        }
+    }
+
+    private void checkEnemyPosition(Position p, boolean[][] matriz) {
+        if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
+            matriz[p.getRow()][p.getColumn()] = true;
+        }
     }
 
     @Override
     public String toString() {
-        return "P";
+        return "️️♙";
     }
 }
