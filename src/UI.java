@@ -1,3 +1,4 @@
+import chesslayer.ChessMatch;
 import chesslayer.ChessPiece;
 import chesslayer.ChessPosition;
 import chesslayer.Color;
@@ -19,19 +20,25 @@ public class UI {
 
     public void imprimirPecasComLogica(ChessPiece piece) {
         if (piece == null) {
-            System.out.print( "- ");
-        } else {
+            System.out.print("-" + ColorsThemes.ANSI_RESET);
+        }
+        else {
             if (piece.getColor() == Color.WHITE) {
-                String symbol = piece.toString();
-                System.out.print(ColorsThemes.ANSI_WHITE + symbol + " " + ColorsThemes.ANSI_RESET);
-            } else {
-                String symbol = piece.toString();
-                System.out.print(ColorsThemes.ANSI_YELLOW + symbol + " " + ColorsThemes.ANSI_RESET);
-
+                System.out.print(ColorsThemes.ANSI_WHITE + piece + ColorsThemes.ANSI_RESET);
+            }
+            else {
+                System.out.print(ColorsThemes.ANSI_YELLOW + piece + ColorsThemes.ANSI_RESET);
             }
         }
+        System.out.print(" ");
 
+    }
 
+    public void imprimirPecasCapturadas(ChessMatch partida) {
+        if(partida.getBoard().getPecasBrancasCapturadas() != null || partida.getBoard().getPecasPretasCapturadas() != null) {
+            System.out.println("Peças capturadas brancas: "+ partida.getBoard().getPecasBrancasCapturadas().toString());
+            System.out.println("Peças capturadas pretas: "+ partida.getBoard().getPecasPretasCapturadas().toString());
+        }
     }
 
     public void imprimirEspacamento () {

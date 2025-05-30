@@ -16,10 +16,12 @@ public class Main {
             try {
                 System.out.println("Turno das " + partida.getTurn().getDescricao());
                 ui.imprimirTabuleiro(partida.getPieces());
+                ui.imprimirPecasCapturadas(partida);
                 System.out.print("Digite a peça a mover: ");
                 ChessPosition peca = ui.lerPosicao(sc);
                 System.out.print("Digite o destino: ");
                 ChessPosition destino = ui.lerPosicao(sc);
+
 
                 ChessPiece capturada = partida.performMove(peca, destino);
 

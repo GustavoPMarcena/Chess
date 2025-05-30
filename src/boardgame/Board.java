@@ -10,9 +10,9 @@ public class Board  {
     private final int columns;
     private Piece[][] pieces;
 
-    private List<Piece> pecasBrancasCapturadas = new ArrayList<Piece>();
-    private List<Piece> pecasPretasCapturadas = new ArrayList<Piece>();
-    private List<Piece> pecasNoJogo = new ArrayList<Piece>();
+    protected List<Piece> pecasBrancasCapturadas = new ArrayList<Piece>();
+    protected List<Piece> pecasPretasCapturadas = new ArrayList<Piece>();
+    protected List<Piece> pecasNoJogo = new ArrayList<Piece>();
 
     public Board(int rows, int columns) {
         this.rows = rows;
@@ -92,6 +92,18 @@ public class Board  {
 
     public void removePecasNoJogo(Piece peca) {
         pecasNoJogo.remove(peca);
+    }
+
+    public List<Piece> getPecasBrancasCapturadas() {
+        return pecasBrancasCapturadas;
+    }
+
+    public List<Piece> getPecasPretasCapturadas() {
+        return pecasPretasCapturadas;
+    }
+
+    public List<Piece> getPecasNoJogo() {
+        return pecasNoJogo;
     }
 
 

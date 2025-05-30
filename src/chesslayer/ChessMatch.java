@@ -5,10 +5,6 @@ import boardgame.Piece;
 import boardgame.Position;
 import pieces.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 public class ChessMatch {
     private Board board;
     private Color turn;
@@ -45,11 +41,14 @@ public class ChessMatch {
         Piece pecaCapturada = makeMove(origem, destino);
         ChessPiece pecaASerMovida = (ChessPiece) board.piece(origem);
         validateCheckmate(pecaCapturada);
-        if (((ChessPiece) pecaCapturada).getColor() == Color.WHITE) {
-            board.addPecasCapturadasBrancas(pecaCapturada);
-        } else {
-            board.addPecasCapturadasPretas(pecaCapturada);
+        if(pecaCapturada != null) {
+            if (((ChessPiece) pecaCapturada).getColor() == Color.WHITE) {
+                board.addPecasCapturadasBrancas(pecaCapturada);
+            } else {
+                board.addPecasCapturadasPretas(pecaCapturada);
+            }
         }
+
         if (pecaASerMovida != null) pecaASerMovida.setMovementNumber();
         changeTurn();
         return (ChessPiece) pecaCapturada;
@@ -130,6 +129,10 @@ public class ChessMatch {
         return turn;
     }
 
+    public Board getBoard() {
+        return board;
+    }
+
     public void setTurn(Color turn) {
         this.turn = turn;
     }
@@ -152,6 +155,8 @@ public class ChessMatch {
             }
         }
     }
+
+
 
 
 }
